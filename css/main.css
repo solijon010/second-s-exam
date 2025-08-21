@@ -45,11 +45,14 @@ button {
 }
 
 html {
-  overflow-x: hidden;
+     scroll-behavior: smooth;
+    overflow-x: hidden; /* faqat yonini cheklaymiz */
 }
 
 body {
-  overflow-x: hidden;
+     scroll-behavior: smooth;
+    min-height: 100vh; /* to‘liq balandlik */
+    overflow-x: hidden;
 }
 
 
@@ -201,9 +204,12 @@ header {
 /* Main section  */
 
 main {
+    flex-grow: 1;
   background-color: var(--navbar-title);
 }
-
+footer {
+    flex-grow: 0;
+}
 .main-content {
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 8px;
@@ -496,6 +502,43 @@ main {
   /* pointer-events: none; */
 }
 
+/* Scroll tugma */
+/* Scroll tugma */
+#toTopBtn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 70px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 48px;
+  background: var(--secondary-color);
+  color: var(--navbar-title);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 1000;
+}
+
+#toTopBtn:hover {
+    background-color: rgba(20, 122, 115, 1);
+}
+
+#toTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#toTopBtn:active {
+  transform: translateY(1px);
+}
+
+
 /* medai */
 @media (max-width: 1150px) {
   .third-section-first__content p,
@@ -623,6 +666,14 @@ main {
   .progress-bar {
     width: 80%;
   }
+
+    #toTopBtn {
+    right: 16px;
+    bottom: 16px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -728,5 +779,12 @@ main {
   .reword__wrapper {
     flex-direction: column;
     gap: 10px;
+  }
+      #toTopBtn {
+    right: 16px;
+    bottom: 16px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
   }
 }

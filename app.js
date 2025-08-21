@@ -11,6 +11,10 @@ const aboutStart = document.querySelector('.extra-sitenav a[href="#get-start"]')
 // dark mode tugmalari (desktop va mobile ikkisini ham oladi)
 const themeBtns = document.querySelectorAll(".theme-controller button");
 
+// scroll uchun 
+const toTopBtn = document.getElementById('toTopBtn');
+const footer = document.getElementById('page-footer');
+
 function openSitenav() {
   overlay.style.transform = "translate(0)";
   sitenav.style.transform = "translateX(0)";
@@ -27,38 +31,70 @@ showSitenavBtn.addEventListener("click", openSitenav);
 overlay.addEventListener("click", closeSitenav);
 closeBtn.addEventListener("click", closeSitenav);
 
-// link bosilganda sitenav yopiladi
+
 [aboutLink, aboutDiscover, aboutStart].forEach(link => {
   if (link) {
     link.addEventListener("click", closeSitenav);
   }
 });
 
-// 🌙☀️ dark mode toggle
+
 function toggleTheme() {
   const isDark = document.body.classList.toggle("dark-mode");
 
-  // tugmalarni sinxron qilish (desktop + mobile)
+
   themeBtns.forEach(b => b.classList.toggle("hidden"));
 
-  // foydalanuvchi tanlovini saqlash
+
   localStorage.setItem("theme", isDark ? "dark" : "light");
 }
 
-// hamma tugmalarga event biriktiramiz
+
 themeBtns.forEach(btn => {
   btn.addEventListener("click", toggleTheme);
 });
 
-// sahifa qayta ochilganda oxirgi tanlovni qo‘llash
+
 if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark-mode");
-  // faqat quyosh tugmasi ko‘rinadi
+
   themeBtns[0].classList.add("hidden");
   themeBtns[1].classList.remove("hidden");
 } else {
   document.body.classList.remove("dark-mode");
-  // faqat oy tugmasi ko‘rinadi
+
   themeBtns[0].classList.remove("hidden");
   themeBtns[1].classList.add("hidden");
 }
+
+// Footer ko‘ringanda tugma chiqsin
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      toTopBtn.classList.add('show');
+    } else {
+      toTopBtn.classList.remove('show');
+    }
+  });
+});
+io.observe(footer);
+
+
+toTopBtn.addEventListener('click', () => {
+
+  if ("scrollBehavior" in document.documentElement.style) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return;
+  }
+
+
+  const topElement = document.body || document.documentElement;
+  if (topElement.scrollIntoView) {
+    topElement.scrollIntoView({ behavior: "smooth" });
+    return;
+  }
+
+
+  document.body.scrollTop = 0;         
+  document.documentElement.scrollTop = 0; 
+});
