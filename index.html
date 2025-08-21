@@ -1,103 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crowdfund Exam</title>
     <!-- Link for font-awesome -->
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <!-- Link for Normalize css -->
     <link rel="stylesheet" href="./css/normalize.css" />
     <!-- Link for Main css -->
     <link rel="stylesheet" href="./css/main.css" />
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header section -->
     <header>
-        <nav class="navbar container">
-            <img
-            class="site-logo"
-            src="./images/svg/site-logo.svg"
-            alt="site logo"
-            aria-hidden="true"
-            />
-            <ul class="sitenav-items">
-                <li class="sitenav-item">
-                    <a class="sitenav-link" href="#">About</a>
-                </li>
-                <li class="sitenav-item">
-                    <a class="sitenav-link active-link" href="#">Discover</a>
-                </li>
-                <li class="sitenav-item">
-                    <a class="sitenav-link" href="#">Get Started</a>
-                </li>
-            </ul>
-        </nav>
+      <nav class="navbar container">
+        <img
+          class="site-logo"
+          src="./images/svg/site-logo.svg"
+          alt="site logo"
+          aria-hidden="true"
+        />
+        <ul class="sitenav-items">
+          <li class="sitenav-item">
+            <a class="sitenav-link" href="#about">About</a>
+          </li>
+          <li class="sitenav-item">
+            <a class="sitenav-link active-link" href="#">Discover</a>
+          </li>
+          <li class="sitenav-item">
+            <a class="sitenav-link" href="#">Get Started</a>
+          </li>
+        </ul>
+        <div class="menu-bar">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      </nav>
     </header>
     <!-- /Header section -->
-    
+
     <!-- Main section -->
     <main>
-        <section class="extra-container main-content">
-            <div class="content-wrapper">
-                <img
-                class="main-content-img"
-                src="./images/svg/main-content-logo.svg"
-                alt="main-content-logo"
-                aria-hidden="true"
-                />
-                <h1 class="main-content-title">Mastercraft Bamboo Monitor Riser</h1>
-                <p class="main-content-text">
-                    A beautiful & handcrafted monitor stand to reduce neck and eye
-                    strain.
-                </p>
+      <section class="extra-container main-content">
+        <div>
+          <img class="m-logo" src="./images/svg/main-content-logo.svg" alt="m logo" />
+          <h2 class="section__bambo-title">Mastercraft Bamboo Monitor Riser</h2>
+          <p class="text">
+            A beautiful & handcrafted monitor stand to reduce neck and eye
+            strain.
+          </p>
+          <div class="section__bambo-footer">
+            <button class="btn">Back this project</button>
+            <div class="bookmark">
+              <div class="img-wrap">
+                <img src="./images/svg/bookmark.svg" alt="flag" />
+              </div>
+              <span>Bookmark</span>
             </div>
-            <div class="buttons">
-                <button class="btn back-btn" type="button">Back this project</button>
-                <button class="btn bookmark-btn" type="button" aria-label="Bookmark">
-                    <span class="icon-wrap" aria-hidden="true">
-                        <i style="color: #979797;" class="fa-solid fa-bookmark"></i>
-                    </span>
-                    <span class="bm-text">Bookmark</span>
-                </button>
-            </div>
-        </section>
-        <section class="extra-container">
-            <div class="stats">
-                <div class="stat">
-                    <h2>$89,914</h2>
-                    <p>of $100,000 backed</p>
-                </div>
-                
-                <div class="divider"></div>
-                
-                <div class="stat">
-                    <h2>5,007</h2>
-                    <p>total backers</p>
-                </div>
-                
-                <div class="divider"></div>
-                
-                <div class="stat">
-                    <h2>56</h2>
-                    <p>days left</p>
-                </div>
-                <div class="progress">
-                    <span style="width: 90%"></span>
-                </div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
+      <section class="extra-container main-content">
+        <div class="stats">
+          <div class="stat">
+            <h2 class="stat-value">$89,914</h2>
+            <p class="stat-label">of $100,000 backed</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="stat">
+            <h2 class="stat-value">5,007</h2>
+            <p class="stat-label">total backers</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="stat">
+            <h2 class="stat-value">56</h2>
+            <p class="stat-label">days left</p>
+          </div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar-main"></div>
+          <div class="progress-bar"></div>
+        </div>
+      </section>
+      <section class="extra-container main-content">
+        <div class="third-section-first__content">
+          <h2 class="about-project" id="about">About this project</h2>
+          <p>
+            The Mastercraft Bamboo Monitor Riser is a sturdy and stylish
+            platform that elevates your screen to a more comfortable viewing
+            height. Placing your monitor at eye level has the potential to
+            improve your posture and make you more comfortable while at work,
+            helping you stay focused on the task at hand.
+          </p>
+          <p>
+            Featuring artisan craftsmanship, the simplicity of design creates
+            extra desk space below your computer to allow notepads, pens, and
+            USB sticks to be stored under the stand.
+          </p>
+        </div>
+      </section>
     </main>
     <!-- /Main section -->
-    
+
     <!-- Footer section -->
     <footer></footer>
     <!-- /Footer section -->
-</body>
+  </body>
 </html>
