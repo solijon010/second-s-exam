@@ -142,7 +142,7 @@ header {
 /* dark mode uchun icon style */
 
 .theme-btn {
-    font-size: 20px;
+    font-size: 25px;
     display: block;
     color: var(--text);
     margin-left: 20px;
@@ -500,6 +500,10 @@ footer {
 .third-section-second__content.out-of-stock {
   opacity: 0.5;
   /* pointer-events: none; */
+}
+
+.out-of-stock {
+    margin-bottom: 48px;
 }
 
 /* Scroll tugma */
